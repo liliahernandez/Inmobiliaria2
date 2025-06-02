@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-// app/Http/Controllers/MultaController.php
 use App\Models\Multa;
 use Illuminate\Http\Request;
 
@@ -18,5 +17,10 @@ class MultaController extends Controller
         $multa = Multa::create($request->all());
         return response()->json($multa, 201);
     }
-}
 
+    // Devuelve la última multa (por id)
+    public function ultimaMulta()
+    {
+        return Multa::orderByDesc('id')->first();
+    }
+}
