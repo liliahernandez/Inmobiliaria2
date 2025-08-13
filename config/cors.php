@@ -7,19 +7,18 @@ return [
     | Cross-Origin Resource Sharing (CORS) Configuration
     |--------------------------------------------------------------------------
     |
-    | Here you may configure your settings for cross-origin resource sharing
-    | or "CORS". This determines what cross-origin operations may execute
-    | in web browsers. You are free to adjust these settings as needed.
-    |
-    | To learn more: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+    | Aquí puedes configurar las opciones de Cross-Origin Resource Sharing
+    | para tu aplicación. Esto te permite especificar qué dominios pueden
+    | acceder a tus recursos API y con qué métodos HTTP.
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+    // 👇 ¡IMPORTANTE! Añade 'login' y 'password/*' aquí
+    'paths' => ['api/*', 'sanctum/csrf-cookie', 'login', 'password/*'], 
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => ['*'], // Recuerda cambiar '*' a tus dominios de frontend en producción.
 
     'allowed_origins_patterns' => [],
 
